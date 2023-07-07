@@ -286,6 +286,8 @@ MonoBehaviour:
   lastScale: {x: 2.2, y: 3.5}
   Sacleuptime: 0.5
   rawImage_V_Player: {fileID: 2105869094}
+  welcomeClip: {fileID: 8300000, guid: 160ec8d28d1b96544b02ff3b5d659130, type: 3}
+  welcomeclip_Time: 4
 --- !u!1 &167303179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085511045}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99b585b0450ea554b88bee4989a6e4ac, type: 3}
   m_Name: 

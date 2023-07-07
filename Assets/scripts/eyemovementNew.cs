@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class eyemovementNew : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class eyemovementNew : MonoBehaviour
     [SerializeField] private GameObject rawImage_V_Player;
     [SerializeField] private AudioClip welcomeClip;
     [SerializeField] private float welcomeclip_Time;
+    [SerializeField] private float alphaValue;
 
     private AudioSource audioSource;
+    private bool isprseed = false;
+    RawImage v_player_rawImage;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+         v_player_rawImage = rawImage_V_Player.GetComponent<RawImage>();
     }
     void Start()
     {
@@ -33,9 +38,10 @@ public class eyemovementNew : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !isprseed)
         {
-            // Invoke("eyeScaleUp" , Sacleuptime);
+           isprseed = true;
+            rawImage_V_Player.SetActive(false);
             eyeScaleUp();
         }
     }
@@ -50,10 +56,24 @@ public class eyemovementNew : MonoBehaviour
 
     private void v_playerDesable()
     {
-        rawImage_V_Player.SetActive(false);
+      //  rawImage_V_Player.SetActive(false);
+       // change_RawImage_alphavaluve();
         audioSource.clip = welcomeClip;
         audioSource.Play();
         Invoke("backToEyeZeroScale", welcomeclip_Time);
+        Invoke("PreseedTrue", welcomeclip_Time);
+    }
 
+    private void change_RawImage_alphavaluve()
+    {
+        Color newColor = v_player_rawImage.color;
+        newColor.a = alphaValue;
+        v_player_rawImage.color = newColor;
+    }
+
+    private void PreseedTrue()
+    {
+        rawImage_V_Player.SetActive(true);
+        isprseed=false;
     }
 }
