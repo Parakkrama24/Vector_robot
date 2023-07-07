@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 02ba2f84f2bd84c8ab7b3ff4ba580b0f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 12385, guid: 0000000000000000e000000000000000, type: 0}
+  disableValidation: 0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258133
+  packageName: 'LMNT: Emotive AI speech for voiceover & characters'
+  packageVersion: 0.1.0
+  assetPath: Packages/com.lmnt.unity/Editor/ConfigureWindow.uss
+  uploadId: 594658

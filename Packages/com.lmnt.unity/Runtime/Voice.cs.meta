@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 70d10bd2a5d1d4f719588f2a232da465
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258133
+  packageName: 'LMNT: Emotive AI speech for voiceover & characters'
+  packageVersion: 0.1.0
+  assetPath: Packages/com.lmnt.unity/Runtime/Voice.cs
+  uploadId: 594658

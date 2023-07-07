@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8e2f59322c5904efda2c114a5619e487
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258133
+  packageName: 'LMNT: Emotive AI speech for voiceover & characters'
+  packageVersion: 0.1.0
+  assetPath: Packages/com.lmnt.unity/Runtime/TinyJson.cs
+  uploadId: 594658

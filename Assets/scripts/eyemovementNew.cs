@@ -16,10 +16,16 @@ public class eyemovementNew : MonoBehaviour
     [SerializeField] private AudioClip welcomeClip;
     [SerializeField] private float welcomeclip_Time;
     [SerializeField] private float alphaValue;
+    [SerializeField] private RenderTexture video1;
+    [SerializeField] private RenderTexture video2;
+    [SerializeField] private float secondVideowaitTime;
+    [SerializeField] private float secondVideoTime;
 
     private AudioSource audioSource;
-    private bool isprseed = false;
+    private bool isPrseed = false;
+    private bool isLonagWait = false;   
     RawImage v_player_rawImage;
+    private float timer;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -38,13 +44,39 @@ public class eyemovementNew : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !isprseed)
+        if(Input.GetMouseButtonDown(0) && !isPrseed)
         {
-           isprseed = true;
+           isPrseed = true;
             rawImage_V_Player.SetActive(false);
             eyeScaleUp();
         }
+        if (Input.GetMouseButton(0))
+        {
+            isLonagWait = true;
+        }
+        else
+        {
+            isLonagWait = false;
+        }
+
+        if(isLonagWait)
+        {
+            timer += Time.deltaTime;
+            if(timer>= secondVideowaitTime && isLonagWait)
+            {
+                isLonagWait = false;
+                v_player_rawImage.texture = video2;
+               // Invoke("BackVideo1", secondVideoTime);
+                Debug.Log("30s");
+            }
+        }
+        
+        
     }
+    /*private void BackVideo1()
+    {
+        v_player_rawImage.texture=video1;//raw image texture equle video1
+    }*/
 
     private void eyeScaleUp()
     {
@@ -74,6 +106,12 @@ public class eyemovementNew : MonoBehaviour
     private void PreseedTrue()
     {
         rawImage_V_Player.SetActive(true);
-        isprseed=false;
+        isPrseed=false;
     }
+
+    /*IEnumerator secondDisplay()
+    {
+        yield return new WaitForSeconds(30);
+        isLonagWait = true;
+    }*/
 }
