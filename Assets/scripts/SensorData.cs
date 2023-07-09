@@ -13,13 +13,18 @@ public class SensorData : MonoBehaviour
     private bool isClicked = false;
 
     public ITriger trigger;
-
+    public Uimaneger _uimaneger;
+    private string portNumbre = "6";
     // Start is called before the first frame update
     void Start()
     {
+        if(_uimaneger.inputValue != null) {
+            _uimaneger.inputValue = portNumbre;
+        }
         try
         {
-            sp = new SerialPort("COM5", 9600);
+            Debug.Log(portNumbre);
+            sp = new SerialPort("COM"+ portNumbre.ToString(), 9600);
             sp.Open();
             sp.ReadTimeout = 10;
             Debug.Log("Serial port opened successfully.");

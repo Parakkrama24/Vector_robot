@@ -54,7 +54,7 @@ public class eyemovementNew : MonoBehaviour
     }
     void Start()
     {
-        //_sensorData.distance = 15;
+        _sensorData.distance = 15;
         backToEyeZeroScale();
     }
 
@@ -94,13 +94,14 @@ public class eyemovementNew : MonoBehaviour
             mouseInput = false;
         }
 
-        Debug.Log(time.ToString());
+        //Debug.Log(time.ToString());
 
         if (time>15 && _sensorData.distance > 0)
         {
-            if (time > 25)
+            if (time > 35)
             {
                 time = 0;
+                Debug.Log("Timecall");
             }
            
             //mouseInput = false;
@@ -116,7 +117,7 @@ public class eyemovementNew : MonoBehaviour
         if (mouseInput && !isPrseed)//can convert mousee click
         {
             isPrseed = true;
-            Debug.Log("15");
+            Debug.Log("aaaaaaaaaaaaaaaaa");
             rawImage_V_Player.SetActive(false);
             eyeScaleUp();
         }
@@ -131,14 +132,18 @@ public class eyemovementNew : MonoBehaviour
 
         if (isLonagWait)
         {
+            if( audioSource.clip == secondAudioClip)
+            {
+                isLonagWait= false;
+            }
             timer += Time.deltaTime;
             if (timer >= secondVideowaitTime && isLonagWait)
             {
                timer = 0;
-                isLonagWait = false;
+              //  isLonagWait = false;
                 v_player_rawImage.texture = video2;
-               // audioSource.clip = secondAudioClip;
-               // audioSource.Play();
+                audioSource.clip = secondAudioClip;
+                audioSource.Play();
                 Invoke("BackVideo1", secondVideoTime);
                 Debug.Log("30s");
             }
@@ -150,8 +155,9 @@ public class eyemovementNew : MonoBehaviour
     {
        
         v_player_rawImage.texture=video1;//raw image texture equle video1
-       // audioSource.Stop();
-      time = 0;
+        Debug.Log("second voice stop");
+        audioSource.Stop();
+        time = 0;
     }
 
     private void eyeScaleUp()
@@ -168,6 +174,7 @@ public class eyemovementNew : MonoBehaviour
        // change_RawImage_alphavaluve();
         audioSource.clip = welcomeClip;
         audioSource.Play();
+        isLonagWait=false;
         Invoke("backToEyeZeroScale", welcomeclip_Time);
         Invoke("PreseedTrue", welcomeclip_Time);
     }
