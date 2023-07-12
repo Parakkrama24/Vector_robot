@@ -421,15 +421,16 @@ MonoBehaviour:
   lastScale: {x: 1, y: 1}
   Sacleuptime: 0.5
   rawImage_V_Player: {fileID: 2105869094}
-  welcomeClip: {fileID: 8300000, guid: 160ec8d28d1b96544b02ff3b5d659130, type: 3}
+  welcomeClip: {fileID: 8300000, guid: e8effd9324e22b547a92e7bb587b68fc, type: 3}
   secondAudioClip: {fileID: 8300000, guid: 0d4ad193d0fa1f44bae6d0df710491e6, type: 3}
   welcomeclip_Time: 4
   alphaValue: 0.5
   video1: {fileID: 8400000, guid: b98cb4498b066dc4085ecffdb7a300bd, type: 2}
   video2: {fileID: 8400000, guid: 3e8e6e44d24d0c74ebf58f54365c2419, type: 2}
-  secondVideowaitTime: 1.5
-  secondVideoTime: 50
+  secondVideowaitTime: 1
+  secondVideoTime: 9
   _sensorData: {fileID: 519420033}
+  dis: 0
 --- !u!1 &167303179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1328,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988498919}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: be48733c031c72d488300c911a7cceca, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a65632cacb96f364aab3e46a14de75ef, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

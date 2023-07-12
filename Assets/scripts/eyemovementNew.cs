@@ -18,16 +18,16 @@ public class eyemovementNew : MonoBehaviour
     [SerializeField] private float Sacleuptime;
     [SerializeField] private GameObject rawImage_V_Player;
     [SerializeField] private AudioClip welcomeClip;
-    [SerializeField]private AudioClip secondAudioClip;
+    [SerializeField] private AudioClip secondAudioClip;
     [SerializeField] private float welcomeclip_Time;
     [SerializeField] private float alphaValue;
     [SerializeField] private RenderTexture video1;
     [SerializeField] private RenderTexture video2;
     [SerializeField] private float secondVideowaitTime;
     [SerializeField] private float secondVideoTime;
-
     [SerializeField] private SensorData _sensorData;
-   // [SerializeField] private float TriggerTime;
+    [SerializeField] private double dis=15;
+  
 
     private AudioSource audioSource;
     private bool isPrseed = false;
@@ -35,13 +35,7 @@ public class eyemovementNew : MonoBehaviour
     RawImage v_player_rawImage;
     private float timer;
     private float timer_0;
-    //private float distance=15;
 
-    //private bool istriggerd;
-    //private bool iswelcome= true;
-
-    //double dis;
-    //bool isVideoPlay=false;
 
 
     bool mouseInput;
@@ -54,7 +48,7 @@ public class eyemovementNew : MonoBehaviour
     }
     void Start()
     {
-        _sensorData.distance = 15;
+      // _sensorData.distance=15;
         backToEyeZeroScale();
     }
 
@@ -66,10 +60,7 @@ public class eyemovementNew : MonoBehaviour
 
     float time = 0;
     void Update()
-    {/*if(_sensorData.distance != 0)
-        {
-            time = 0;
-        }*/
+    {
 
 
         if(_sensorData.distance> 0 && _sensorData.distance<130)
@@ -94,9 +85,9 @@ public class eyemovementNew : MonoBehaviour
             mouseInput = false;
         }
 
-        //Debug.Log(time.ToString());
+        
 
-        if (time>15 && _sensorData.distance > 0)
+        if (time>10 && _sensorData.distance > 0)
         {
             if (time > 35)
             {
@@ -104,7 +95,7 @@ public class eyemovementNew : MonoBehaviour
                 Debug.Log("Timecall");
             }
            
-            //mouseInput = false;
+           
             longMouseInput = true;
             Debug.Log("wrgeg");
         }
@@ -140,7 +131,7 @@ public class eyemovementNew : MonoBehaviour
             if (timer >= secondVideowaitTime && isLonagWait)
             {
                timer = 0;
-              //  isLonagWait = false;
+              
                 v_player_rawImage.texture = video2;
                 audioSource.clip = secondAudioClip;
                 audioSource.Play();
@@ -164,14 +155,13 @@ public class eyemovementNew : MonoBehaviour
     {
         leftEye.transform.DOScale(lastScale, Sacleuptime);
         rightEye.transform.DOScale(lastScale, Sacleuptime);
-      //  v_playerDesable();
+     
         Invoke("Audioplayer", Sacleuptime);
     }
 
     private void Audioplayer()
     {
-      //  rawImage_V_Player.SetActive(false);
-       // change_RawImage_alphavaluve();
+
         audioSource.clip = welcomeClip;
         audioSource.Play();
         isLonagWait=false;
@@ -179,17 +169,11 @@ public class eyemovementNew : MonoBehaviour
         Invoke("PreseedTrue", welcomeclip_Time);
     }
 
-
-
     private void PreseedTrue()
     {
         rawImage_V_Player.SetActive(true);
        isPrseed=false;
     }
 
-    /*IEnumerator secondDisplay()
-    {
-        yield return new WaitForSeconds(30);
-        isLonagWait = true;
-    }*/
+
 }

@@ -10,7 +10,7 @@ public class SensorData : MonoBehaviour
     private string receivedString;
     public  double distance;
     [SerializeField] private int maxTrigger = 10;
-    private bool isClicked = false;
+    //private bool isClicked = false;
 
     public ITriger trigger;
     public Uimaneger _uimaneger;
@@ -61,19 +61,8 @@ public class SensorData : MonoBehaviour
 
     private bool hasExecuted = false;
 
-    public void MouseClick(ITriger triger)
-    {
 
-        if (distance < maxTrigger)
-        {
 
-        }
 
-    }
-
-    public void MouseHold(ITriger triger)
-    {
-
-    }
 
 }
